@@ -47,10 +47,39 @@
         </h1>
     </main>
 
-    <footer id="footer">
-        <address id="address">
-        </address>
+    <footer id="weather">
+        <div class="weather-info">
+            <i class="wi" id="icon"></i>
+            <span id="temp"></span><i class="wi wi-celsius"></i>
+        </div>
+        <ul class="list-inline">
+            <li id="name"></li>
+            <li id="desc"></li>
+        </ul>
     </footer>
+    <script type="application/json" id="json-data">
+        $(function() {
+            $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Osaka-shi,JP&APPID=557b466129cf7d7427b03e5b7886a4bb", function(data) {
+                if (!data.cod || data.cod != 200) {
+                    return;
+                }
+
+                $("#desc").text(data.weather[0].description);
+                $("#temp").text(Math.floor(data.main.temp - 273.15));
+                $("#name").text(data.name);
+
+                var id = data.weather[0].id;
+                var unixTime = Math.floor((new Date()).getTime() / 1000);
+                if (data.sys.sunrise <= unixTime && unixTime <= data.sys.sunset) {
+                    $("#icon").addClass("wi-owm-day-" + id);
+                } else {
+                    $("#icon").addClass("wi-owm-night-" + id);
+                }
+
+                $("#weather").show();
+            });
+        });
+    </script>
 </body>
 
 </html>
