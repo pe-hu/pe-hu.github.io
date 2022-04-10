@@ -16,7 +16,9 @@ request.onload = function() {
     var data = this.response;
     console.log(data);
     var messageElement = $(
-        "<span> 大阪 - " +
+        "<span>" +
+        data["name"] +
+        " - " +
         data["weather"][0]["description"] +
         " | " +
         data["weather"][0]["main"] +
