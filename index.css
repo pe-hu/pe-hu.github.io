@@ -34,10 +34,10 @@ body {
     z-index: 100;
     bottom: 0;
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.25rem 0.5rem;
     font-size: 1rem;
+    line-height: 150%;
     overflow: hidden;
-    white-space: nowrap;
     font-family: "MS Mincho", "SimSong", serif;
 }
 
@@ -46,19 +46,9 @@ body {
     src: url("https://creative-community.space/coding/fontbook/family/MS%20Mincho.ttf");
 }
 
-@keyframes hscroll {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
 #footer p {
     padding: 0;
     margin: 0;
-    animation: hscroll 20s linear infinite;
 }
 
 @media screen and (max-width: 950px) {
