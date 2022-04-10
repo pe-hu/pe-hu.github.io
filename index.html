@@ -12,10 +12,7 @@
 
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="sky.css" />
     <link rel="stylesheet" href="rainbow.css" />
-    <link rel="stylesheet" href="fontmotion.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <style>
 
@@ -28,18 +25,7 @@
     </header>
     <main id="main" class="sky">
         <h1>Peace for Future</h1>
-        <div id="infomation">
-            <h2 class="rainbow">
-                <b>✌️</b>
-                <span>　</span>
-                <span>f</span>
-                <span>o</span>
-                <span>r</span>
-                <span>　</span>
-                <span>未</span>
-                <span>来</span>
-            </h2>
-        </div>
+        <div id="infomation"></div>
     </main>
 
     <footer id="footer">
@@ -47,6 +33,7 @@
     </footer>
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="weather.js"></script>
 <script>
     let btn = document.querySelector('#btn');
@@ -59,6 +46,10 @@
     btn.addEventListener('click', function() {
         btnToggleclass(box);
     }, false);
+
+    $(function() {
+        $("#infomation").load("infomation.html");
+    })
 </script>
 
 </html>
