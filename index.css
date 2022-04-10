@@ -35,10 +35,10 @@ body {
 
 .infomation #infomation {
     display: block;
-    width: 75%;
+    width: 85%;
     max-width: 900px;
     font-family: 'Futura', "MS Mincho", "SimSong", monospace;
-    padding: 1rem;
+    padding: 2.5%;
     margin: 5rem auto;
     text-align: center;
     background-color: #fff;
@@ -53,7 +53,20 @@ body {
 #infomation h2 {
     font-weight: 100;
     font-size: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+#infomation p {
+    margin-top: 2.5rem;
+}
+
+#infomation u {
+    font-size: 0.75rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(-90deg, #B3CBF6, #FFC778, #EEE);
 }
 
 #infomation pre {

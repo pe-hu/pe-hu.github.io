@@ -22,7 +22,7 @@
     </style>
 </head>
 
-<body <div id="infomation">
+<body>
     <h2 class="rainbow">
         <b>✌️</b>
         <span>　</span>
@@ -34,7 +34,8 @@
         <span>来</span>
     </h2>
 
-    <p>sky.css</p>
+    <p class="rainbow">sky.css</p>
+    <u>ページ背景をスタイリングするCSS</u>
 
     <pre><code><math><![CDATA[
         .sky {
@@ -56,7 +57,8 @@
         }
     ]]></math></code></pre>
 
-    <p>rainbow.css</p>
+    <p class="rainbow">rainbow.css</p>
+    <u>七色に変化する文字色をスタイリングするCSS</u>
 
     <pre><code><math><![CDATA[
         .rainbow span:nth-child(7n+1) {
@@ -125,49 +127,17 @@
             }
         }
     ]]></math></code></pre>
-
-    <p>weather.js</p>
-
-    <pre><code><math><![CDATA[
-        var messageList = $('#footer p');
-        
-        var request = new XMLHttpRequest();
-        var targetCityName = "osaka";
-        var appId = "???";
-        var owmURL = "https://api.openweathermap.org/data/2.5/weather?APPID=" + appId + "&lang=ja&units=metric&q=" + targetCityName + ",jp;";
-        
-        
-        request.open('GET', owmURL, true);
-        //結果をjson型で受け取る
-        request.responseType = 'json';
-        
-        request.onload = function() {
-            var data = this.response;
-            console.log(data);
-            var messageElement = $(
-                "<span> 大阪 - " +
-                data["weather"][0]["description"] +
-                " | " +
-                data["weather"][0]["main"] +
-                " | 気温 " +
-                data["main"]["temp"] +
-                " ℃ | 最高気温 " +
-                data["main"]["temp_max"] +
-                "℃ | 最低気温 " +
-                data["main"]["temp_min"] +
-                "℃ | 風速 " +
-                data["wind"]["speed"] +
-                " ㎞ | 雲量 " +
-                data["clouds"]["all"] +
-                " % </span>"
-            );
-            //HTMLに取得したデータを追加する
-            messageList.append(messageElement);
-        };
-        
-        request.send();
-    ]]></math></code></pre>
     </div>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#infomation p").children().addBack().contents().each(function() {
+        if (this.nodeType == 3) {
+            var $this = $(this);
+            $this.replaceWith($this.text().replace(/(\S)/g, "<span>$&</span>"));
+        }
+    });
+</script>
 
 </html>
