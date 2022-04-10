@@ -13,9 +13,7 @@ body {
 }
 
 #main h1 {
-    font-family: 'Futura', monospace;
     font-weight: lighter;
-    font-stretch: condensed;
     word-spacing: -.45rem;
     color: #fff;
     font-size: 2.5rem;
@@ -28,12 +26,59 @@ body {
     -webkit- transform: translateY(-50%) translateX(-50%);
 }
 
+.infomation #main h1,
+.infomation #footer,
+#infomation {
+    display: none;
+}
+
+.infomation #infomation {
+    display: block;
+    width: 75%;
+    max-width: 900px;
+    font-family: 'Futura', monospace;
+    padding: 1rem;
+    margin: 5rem auto;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+
+#header {
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    right: 0;
+    padding: 2vw;
+}
+
+#header a {
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    padding: 0.25rem;
+    text-decoration: none;
+    display: table-cell;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    animation: rainbow 7s step-start infinite;
+    transition: all 1000ms ease;
+}
+
+#header a:hover {
+    filter: invert();
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
 #footer {
+    background-color: rgba(255, 255, 255, 0.75);
     position: fixed;
     z-index: 100;
     bottom: 0;
     width: 95%;
-    padding: 0.25rem 2.5vw;
+    padding: 0.5rem 2.5%;
     font-size: 1rem;
     line-height: 150%;
     overflow: hidden;

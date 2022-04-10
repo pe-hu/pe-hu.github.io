@@ -22,13 +22,12 @@
     </style>
 </head>
 
-<body>
-    <header id="header">
-        <nav id="nav">
-        </nav>
+<body id="box">
+    <header id="header" class="rainbow">
+        <a id="btn">?</a>
     </header>
     <main id="main" class="sky">
-        <h1 class="">
+        <h1 class="fontmotion">
             <span>P</span>
             <span>e</span>
             <span>a</span>
@@ -46,6 +45,9 @@
             <span>r</span>
             <span>e</span>
         </h1>
+        <div id="infomation">
+            Infomation
+        </div>
     </main>
 
     <footer id="footer">
@@ -54,5 +56,17 @@
 </body>
 
 <script src="weather.js"></script>
+<script>
+    let btn = document.querySelector('#btn');
+    let box = document.querySelector('#box');
+
+    let btnToggleclass = function(el) {
+        el.classList.toggle('infomation');
+    }
+
+    btn.addEventListener('click', function() {
+        btnToggleclass(box);
+    }, false);
+</script>
 
 </html>

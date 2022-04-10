@@ -1,5 +1,5 @@
 .fontmotion {
-    animation: 25s linear infinite fontmotion;
+    animation: 10s linear infinite fontmotion;
 }
 
 @-webkit-keyframes fontmotion {
