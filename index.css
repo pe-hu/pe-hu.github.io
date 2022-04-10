@@ -17,13 +17,14 @@ body {
     word-spacing: -.45rem;
     color: #fff;
     font-size: 2.5rem;
+    font-family: 'Futura', monospace;
     width: 75%;
     text-align: center;
     position: absolute;
     top: 45%;
     left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    -webkit- transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%) scale(1.11, 1);
+    -webkit- transform: translateY(-50%) translateX(-50%) scale(1.11, 1);
 }
 
 .infomation #main h1,
@@ -46,7 +47,6 @@ body {
 #infomation h2 {
     text-align: center;
     font-weight: 100;
-    transform: scale(1.11, 1);
 }
 
 #header {
