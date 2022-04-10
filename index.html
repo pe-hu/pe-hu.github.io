@@ -47,39 +47,49 @@
         </h1>
     </main>
 
-    <footer id="weather">
-        <div class="weather-info">
-            <i class="wi" id="icon"></i>
-            <span id="temp"></span><i class="wi wi-celsius"></i>
-        </div>
-        <ul class="list-inline">
-            <li id="name"></li>
-            <li id="desc"></li>
-        </ul>
+    <footer id="footer">
+        Today,
+        <script>
+            //現在の天気を取得する場所の名前
+            let targetCityName = "osaka";
+            let appId = "557b466129cf7d7427b03e5b7886a4bb";
+
+            const requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + targetCityName + "&appid=" + appId + "/";
+
+            //Ajax通信用のオブジェクトを作成
+            let xhr = new XMLHttpRequest();
+
+            //通信方式とURLを設定
+            xhr.open("GET", requestUrl);
+
+            //通信を実行する
+            xhr.send();
+
+            //通信ステータスが変わったら実行される関数
+            xhr.onreadystatechange = function() {
+                //通信が完了
+                if (xhr.readyState == 4) {
+                    ShowTodaysWeather(xhr.responseText);
+                }
+            }
+
+            /**
+             * 今日の天気を表示する
+             */
+            function ShowTodaysWeather(response) {
+
+                let obj = JSON.parse(response);
+
+                let weather = obj.weather[0].description;
+                let city = obj.name;
+                let temp = obj.main.temp;
+
+                console.log("現在の" + city + "の天気は" + weather);
+                console.log("気温は" + temp + "度です。");
+
+            }
+        </script>
     </footer>
-    <script type="application/json" id="json-data">
-        $(function() {
-            $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Osaka-shi,JP&APPID=557b466129cf7d7427b03e5b7886a4bb", function(data) {
-                if (!data.cod || data.cod != 200) {
-                    return;
-                }
-
-                $("#desc").text(data.weather[0].description);
-                $("#temp").text(Math.floor(data.main.temp - 273.15));
-                $("#name").text(data.name);
-
-                var id = data.weather[0].id;
-                var unixTime = Math.floor((new Date()).getTime() / 1000);
-                if (data.sys.sunrise <= unixTime && unixTime <= data.sys.sunset) {
-                    $("#icon").addClass("wi-owm-day-" + id);
-                } else {
-                    $("#icon").addClass("wi-owm-night-" + id);
-                }
-
-                $("#weather").show();
-            });
-        });
-    </script>
 </body>
 
 </html>
