@@ -1,43 +1,43 @@
 .rainbow span:nth-child(7n+1) {
     color: red;
     animation: rainbow 7s step-start infinite;
-    animation-delay: 1s;
+    animation-delay: -1s;
 }
 
 .rainbow span:nth-child(7n+2) {
     color: orange;
     animation: rainbow 7s step-start infinite;
-    animation-delay: 2s;
+    animation-delay: -2s;
 }
 
 .rainbow span:nth-child(7n+3) {
     color: yellow;
     animation: rainbow 7s step-start infinite;
-    animation-delay: 3s;
+    animation-delay: -3s;
 }
 
 .rainbow span:nth-child(7n+4) {
     color: green;
     animation: rainbow 7s step-start infinite;
-    animation-delay: 4s;
+    animation-delay: -4s;
 }
 
 .rainbow span:nth-child(7n+5) {
     color: skyblue;
     animation: rainbow 7s step-start infinite;
-    animation-delay: 5s;
+    animation-delay: -5s;
 }
 
 .rainbow span:nth-child(7n+6) {
     color: blue;
     animation: rainbow 7s step-start infinite;
-    animation-delay: 6s;
+    animation-delay: -6s;
 }
 
 .rainbow span:nth-child(7n+7) {
     color: purple;
     animation: rainbow 7s step-start infinite;
-    animation-delay: 7s;
+    animation-delay: -7s;
 }
 
 @keyframes rainbow {
