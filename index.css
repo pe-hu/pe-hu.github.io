@@ -17,7 +17,7 @@ body {
     font-stretch: condensed;
     word-spacing: -.55rem;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     width: 55%;
     text-align: center;
     position: absolute;
@@ -25,4 +25,10 @@ body {
     left: 50%;
     transform: translateY(-50%) translateX(-50%) scale(1.11, 1);
     -webkit- transform: translateY(-50%) translateX(-50%);
+}
+
+@media screen and (max-width: 950px) {
+    #main h1 {
+        font-size: 1.5rem;
+    }
 }
