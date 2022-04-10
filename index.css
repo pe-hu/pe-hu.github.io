@@ -29,13 +29,43 @@ body {
 }
 
 #footer {
+    background-color: rgba(255, 255, 255, 0.55);
     position: fixed;
     z-index: 100;
     bottom: 0;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: "MS Mincho", "SimSong", serif;
+}
+
+@font-face {
+    font-family: "MS Mincho";
+    src: url("https://creative-community.space/coding/fontbook/family/MS%20Mincho.ttf");
+}
+
+@keyframes hscroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#footer p {
+    padding: 0;
+    margin: 0;
+    animation: hscroll 20s linear infinite;
 }
 
 @media screen and (max-width: 950px) {
     #main h1 {
         font-size: 1.5rem;
+    }
+    #footer {
+        font-size: 0.75rem;
     }
 }

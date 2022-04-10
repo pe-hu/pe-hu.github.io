@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="sky.css" />
     <link rel="stylesheet" href="rainbow.css" />
     <link rel="stylesheet" href="fontmotion.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <style>
 
@@ -48,48 +49,10 @@
     </main>
 
     <footer id="footer">
-        Today,
-        <script>
-            //現在の天気を取得する場所の名前
-            let targetCityName = "osaka";
-            let appId = "557b466129cf7d7427b03e5b7886a4bb";
-
-            const requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + targetCityName + "&appid=" + appId + "/";
-
-            //Ajax通信用のオブジェクトを作成
-            let xhr = new XMLHttpRequest();
-
-            //通信方式とURLを設定
-            xhr.open("GET", requestUrl);
-
-            //通信を実行する
-            xhr.send();
-
-            //通信ステータスが変わったら実行される関数
-            xhr.onreadystatechange = function() {
-                //通信が完了
-                if (xhr.readyState == 4) {
-                    ShowTodaysWeather(xhr.responseText);
-                }
-            }
-
-            /**
-             * 今日の天気を表示する
-             */
-            function ShowTodaysWeather(response) {
-
-                let obj = JSON.parse(response);
-
-                let weather = obj.weather[0].description;
-                let city = obj.name;
-                let temp = obj.main.temp;
-
-                console.log("現在の" + city + "の天気は" + weather);
-                console.log("気温は" + temp + "度です。");
-
-            }
-        </script>
+        <p></p>
     </footer>
 </body>
+
+<script src="weather.js"></script>
 
 </html>
