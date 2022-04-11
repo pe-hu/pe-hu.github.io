@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>✌︎ for 未来</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="∧° ┐">
+    <meta name="description" content="Peace for Future">
+
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="sky.css" />
+    <link rel="stylesheet" href="rainbow.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <style>
+        pre {
+            word-break: break-all;
+            width: 95%;
+            margin: auto;
+            overflow: auto;
+            text-align: left;
+            border: 2px solid;
+            border-image: linear-gradient(-90deg, #B3CBF6, #FFC778, #EEE);
+            border-image-slice: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="rainbow">
+        <b>✌️</b>
+        <span>　</span>
+        <span>f</span>
+        <span>o</span>
+        <span>r</span>
+        <span>　</span>
+        <span>未</span>
+        <span>来</span>
+    </h2>
+
+    <p class="rainbow">sky.css</p>
+    <u>ページ背景色をスタイリングするCSS</u>
+
+    <pre><code><math><![CDATA[
+        .sky {
+            background: linear-gradient(90deg, #B3CBF6, #FFC778, #EEE);
+            background-size: 400% 400%;
+            animation: sky 10s ease infinite;
+        }
+        
+        @keyframes sky {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    ]]></math></code></pre>
+
+    <p class="rainbow">rainbow.css</p>
+    <u>七色に変化する文字色をスタイリングするCSS</u>
+
+    <pre><code><math><![CDATA[
+        .rainbow span:nth-child(7n+1) {
+            color: red;
+            animation: rainbow 7s step-start infinite;
+            animation-delay: -1s;
+        }
+        
+        .rainbow span:nth-child(7n+2) {
+            color: orange;
+            animation: rainbow 7s step-start infinite;
+            animation-delay: -2s;
+        }
+        
+        .rainbow span:nth-child(7n+3) {
+            color: yellow;
+            animation: rainbow 7s step-start infinite;
+            animation-delay: -3s;
+        }
+        
+        .rainbow span:nth-child(7n+4) {
+            color: green;
+            animation: rainbow 7s step-start infinite;
+            animation-delay: -4s;
+        }
+        
+        .rainbow span:nth-child(7n+5) {
+            color: skyblue;
+            animation: rainbow 7s step-start infinite;
+            animation-delay: -5s;
+        }
+        
+        .rainbow span:nth-child(7n+6) {
+            color: blue;
+            animation: rainbow 7s step-start infinite;
+            animation-delay: -6s;
+        }
+        
+        .rainbow span:nth-child(7n+7) {
+            color: purple;
+            animation: rainbow 7s step-start infinite;
+            animation-delay: -7s;
+        }
+        
+        @keyframes rainbow {
+            14% {
+                color: red;
+            }
+            28.2% {
+                color: orange;
+            }
+            42.4% {
+                color: yellow;
+            }
+            56.5% {
+                color: green;
+            }
+            70.6% {
+                color: skyblue;
+            }
+            84.8% {
+                color: blue;
+            }
+            100% {
+                color: purple;
+            }
+        }
+    ]]></math></code></pre>
+
+    <p class="rainbow">Jquery</p>
+    <u>指定要素を文字単位でマークアップするスクリプト</u>
+
+    <pre><code><math><![CDATA[
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $("p.rainbow").children().addBack().contents().each(function() {
+                if (this.nodeType == 3) {
+                    var $this = $(this);
+                    $this.replaceWith($this.text().replace(/(\S)/g, "<span>$&</span>"));
+                }
+            });
+        </script>
+    ]]></math></code></pre>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $("p.rainbow").children().addBack().contents().each(function() {
+        if (this.nodeType == 3) {
+            var $this = $(this);
+            $this.replaceWith($this.text().replace(/(\S)/g, "<span>$&</span>"));
+        }
+    });
+</script>
+
+</html>

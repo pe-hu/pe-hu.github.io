@@ -33,121 +33,19 @@
         <span>未</span>
         <span>来</span>
     </h2>
-
-    <p class="rainbow">sky.css</p>
-    <u>ページ背景色をスタイリングするCSS</u>
-
-    <pre><code><math><![CDATA[
-        .sky {
-            background: linear-gradient(90deg, #B3CBF6, #FFC778, #EEE);
-            background-size: 400% 400%;
-            animation: sky 10s ease infinite;
-        }
-        
-        @keyframes sky {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-    ]]></math></code></pre>
-
-    <p class="rainbow">rainbow.css</p>
-    <u>七色に変化する文字色をスタイリングするCSS</u>
-
-    <pre><code><math><![CDATA[
-        .rainbow span:nth-child(7n+1) {
-            color: red;
-            animation: rainbow 7s step-start infinite;
-            animation-delay: -1s;
-        }
-        
-        .rainbow span:nth-child(7n+2) {
-            color: orange;
-            animation: rainbow 7s step-start infinite;
-            animation-delay: -2s;
-        }
-        
-        .rainbow span:nth-child(7n+3) {
-            color: yellow;
-            animation: rainbow 7s step-start infinite;
-            animation-delay: -3s;
-        }
-        
-        .rainbow span:nth-child(7n+4) {
-            color: green;
-            animation: rainbow 7s step-start infinite;
-            animation-delay: -4s;
-        }
-        
-        .rainbow span:nth-child(7n+5) {
-            color: skyblue;
-            animation: rainbow 7s step-start infinite;
-            animation-delay: -5s;
-        }
-        
-        .rainbow span:nth-child(7n+6) {
-            color: blue;
-            animation: rainbow 7s step-start infinite;
-            animation-delay: -6s;
-        }
-        
-        .rainbow span:nth-child(7n+7) {
-            color: purple;
-            animation: rainbow 7s step-start infinite;
-            animation-delay: -7s;
-        }
-        
-        @keyframes rainbow {
-            14% {
-                color: red;
-            }
-            28.2% {
-                color: orange;
-            }
-            42.4% {
-                color: yellow;
-            }
-            56.5% {
-                color: green;
-            }
-            70.6% {
-                color: skyblue;
-            }
-            84.8% {
-                color: blue;
-            }
-            100% {
-                color: purple;
-            }
-        }
-    ]]></math></code></pre>
-
-    <p class="rainbow">Jquery</p>
-    <u>指定要素を文字単位でマークアップするスクリプト</u>
-
-    <pre><code><math><![CDATA[
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-    $(".rainbow").children().addBack().contents().each(function() {
-        if (this.nodeType == 3) {
-            var $this = $(this);
-            $this.replaceWith($this.text().replace(/(\S)/g, "<span>$&</span>"));
-        }
-    });
-</script>
-    ]]></math></code></pre>
+    <h1>This Website is HTML graffiti Book by <a class="rainbow" href="https://creative-community.space/pehu/" target="_blank">∧°┐</a>.<br/>All the code is in HTML, CSS, and just a little JavaScript Only.</h1>
+    <p>このウェブサイトは、HTMLとCSSとほんの少しのJavaScriptで書く<a class="rainbow" href="https://creative-community.space/pehu/" target="_blank">∧°┐</a>による絵本のようなウェブサイトです。</p>
+    <div class="log">
+        <h2>2022.4.11</h2>
+        <h1>index.html, sky.css, rainbow.css, and weather.js have Launched.</h1>
+        <p>空の色を表したグラデーションと文字が虹色に変化するアニメーションを装飾するCSS、大阪の今日の天気を呼び出すJavaScriptをリンクしたトップページが完成しました。</p>
+    </div>
     </div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $("#infomation p").children().addBack().contents().each(function() {
+    $("a.rainbow").children().addBack().contents().each(function() {
         if (this.nodeType == 3) {
             var $this = $(this);
             $this.replaceWith($this.text().replace(/(\S)/g, "<span>$&</span>"));

@@ -12,7 +12,7 @@ body {
     z-index: 0;
 }
 
-#main h1 {
+#main .title {
     font-weight: lighter;
     word-spacing: -.25rem;
     color: #fff;
@@ -27,7 +27,7 @@ body {
     -webkit- transform: translateY(-50%) translateX(-50%) scale(1.11, 1);
 }
 
-.infomation #main h1,
+.infomation #main .title,
 .infomation #footer,
 #infomation {
     display: none;
@@ -38,9 +38,8 @@ body {
     width: 85%;
     max-width: 900px;
     font-family: 'Futura', "MS Mincho", "SimSong", monospace;
-    padding: 2.5%;
+    padding: 2.5% 5%;
     margin: 5rem auto;
-    text-align: center;
     background-color: #fff;
     border-radius: 0.5rem;
 }
@@ -50,14 +49,37 @@ body {
     font-size: 125%;
 }
 
-#infomation h2 {
+#infomation h1 {
     font-weight: 100;
-    font-size: 1.5rem;
+    line-height: 150%;
+    font-size: 2.5rem;
     margin-bottom: 1.25rem;
 }
 
+#infomation h2 {
+    font-weight: 100;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
 #infomation p {
-    margin-top: 2.5rem;
+    font-size: 1rem;
+    line-height: 200%;
+}
+
+#infomation a {
+    text-decoration: none;
+}
+
+#infomation .log {
+    text-decoration: none;
+    padding: 2.5%;
+    border: 2px solid;
+    border-image: linear-gradient(-90deg, #B3CBF6, #FFC778, #EEE);
+    border-image-slice: 1;
+    width: 95%;
+    margin: 1.25rem 0 0;
 }
 
 #infomation u {
@@ -67,16 +89,6 @@ body {
     padding: 0.25rem;
     border-radius: 0.25rem;
     background: linear-gradient(-90deg, #B3CBF6, #FFC778, #EEE);
-}
-
-#infomation pre {
-    word-break: break-all;
-    width: 100%;
-    overflow: auto;
-    text-align: left;
-    border: 2px solid;
-    border-image: linear-gradient(-90deg, #B3CBF6, #FFC778, #EEE);
-    border-image-slice: 1;
 }
 
 #header {
