@@ -127,6 +127,21 @@
             }
         }
     ]]></math></code></pre>
+
+    <p class="rainbow">Jquery</p>
+    <u>指定要素を文字単位でマークアップするスクリプト</u>
+
+    <pre><code><math><![CDATA[
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(".rainbow").children().addBack().contents().each(function() {
+        if (this.nodeType == 3) {
+            var $this = $(this);
+            $this.replaceWith($this.text().replace(/(\S)/g, "<span>$&</span>"));
+        }
+    });
+</script>
+    ]]></math></code></pre>
     </div>
 </body>
 
