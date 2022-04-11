@@ -145,7 +145,8 @@ body {
 }
 
 @media screen and (max-width: 950px) {
-    #main h1 {
+    #main .title,
+    #infomation h1 {
         font-size: 1.5rem;
     }
     #infomation .log h2 {
