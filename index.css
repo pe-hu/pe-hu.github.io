@@ -39,7 +39,7 @@ body {
     max-width: 900px;
     font-family: 'Futura', "MS Mincho", "SimSong", monospace;
     padding: 2.5% 5%;
-    margin: 5rem auto;
+    margin: 5rem auto 2.5rem;
     background-color: #fff;
     border-radius: 0.5rem;
 }
